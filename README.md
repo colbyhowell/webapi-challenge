@@ -26,13 +26,24 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+Server side routing, which allows us to access data from different endpoints. Middleware, which allows us to manipulate data and requests from the server.
+
 - [ ] Describe Middleware?
+
+Middleware is the process of writing functions, or using 3rd party middleware, that have access to the homies(req, res) objects and can make changes to those objects, amongst other things.
 
 - [ ] Describe a Resource?
 
+Everything is a resource. All of it is accessible via URL.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+The block of data that the CRUD operation changed or requested. If you return the new or edited block, it shows that your request was successful, plus you can see the change itself.
+
 - [ ] How can we partition our application into sub-applications?
+
+By using sub-applications, you can ensure that a specific file is dedicated to a specific type of data. This helps to keep the main pages clean, and keep all the right material in the right place.
+
 
 ## Project Setup
 
