@@ -7,8 +7,22 @@ const router = express.Router();
 
 // GET REQUEST
 
-router.get("/", async (req, res) => {
-    const getData = await Actions.get()
+router.get("/:id", async (req, res) => {
+    const { id } = req.params
+    console.log(id)
+    const getData = await Actions.get(id)
+    try {
+        res.status(200).json(getData)
+    } catch{
+        res.status(500).json({ message: "The API could not be researched" })
+    }
+})
+
+// GET ALL ACTIONS FOR 1 PROJECT
+
+router.get("/all/:id", async (req, res) => {
+    const { id } = req.params
+    const getData = await Projects.getProjectActions(id)
     try {
         res.status(200).json(getData)
     } catch{

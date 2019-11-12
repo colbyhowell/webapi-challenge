@@ -16,7 +16,18 @@ router.get('/', async (req, res) => {
     }
 })
 
-// GET PROJECTS AND ACTIONS TOGETHER
+//GET SINGULAR PROJECT
+
+router.get('/:id', async (req, res) => {
+    const getProjects = await Projects.get(req.params.id)
+    try {
+        res.status(200).json(getProjects)
+    } catch{
+        res.status(500).json({ message: "the sever cannot be reached at this time" })
+    }
+})
+
+// GET ONE PROJECT AND ACTIONS TOGETHER
 
 router.get('/all', async (req, res) => {
     const id = req.body.project_id

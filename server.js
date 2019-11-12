@@ -2,10 +2,12 @@ const express = require('express');
 const helmet = require('helmet');
 const projectsRouter = require('./projects/projectsRouter')
 const actionsRouter = require('./actions/actionsRouter')
+const cors = require('cors')
 
 const server = express();
 
 server.use(helmet());
+server.use(cors())
 server.use(express.json());
 
 server.use("/api/projects", projectsRouter)
